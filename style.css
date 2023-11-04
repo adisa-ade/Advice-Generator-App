@@ -1,0 +1,100 @@
+:root{
+    --lightCyan: hsl(193, 38%, 86%);
+    --neonGreen: hsl(150, 100%, 66%);    
+    --grayishBlue: hsl(217, 19%, 38%);
+    --darkGrayishBlue: hsl(217, 19%, 24%);
+    --darkBlue: hsl(218, 23%, 16%);    
+    --weight-800: 800;
+    font-family: 'Manrope', sans-serif;
+}
+body{
+    background-color: var(--darkBlue);
+}
+.container{
+    display: flex;
+    flex-direction: column;    
+    margin: 15% auto;
+    padding: 20px 10px;
+    align-items: center;
+    background-color: var(--darkGrayishBlue);
+    border-radius: 10px;
+    position: relative;
+}
+.text{
+    text-align: center;
+}
+h1{
+    color: var(--neonGreen);
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+p{
+    font-size: 28px;
+    color: var(--lightCyan);
+    font-weight: var(--weight-800);
+    animation: colors infinite 7s;
+}
+
+@keyframes colors {
+     0% {color: rgb(231, 227, 227)}
+     25% {color: rgb(236, 97, 97)}
+     50% {color: rgb(93, 93, 233)}
+     75% {color: rgb(243, 190, 90)}
+     100% {color: rgb(230, 145, 230)}
+}
+
+.divider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+#desktop-divider{
+    display: none;
+    margin-bottom: 80px;
+}
+#mobile-divider{
+    margin-bottom: 80px;
+}
+.dice{
+    position: absolute;
+    top: 85%;
+    background-color: var(--neonGreen);
+    border-radius: 50%;
+    padding: 20px;
+}
+#dice{
+    width: 40px;
+}
+
+@media screen and (min-width:375px) {
+    .container{
+        margin-top: 35%;
+    }
+    #mobile-divider{
+        width: 320px;
+    }
+}
+@media screen and (min-width:760px) {
+    .container{
+        width: 80%;
+    }
+    #mobile-divider{
+        display: none;
+    }
+    #desktop-divider{
+        display: block;
+        width: 500px;
+    }
+    #dice{
+        width: 55px;
+    }    
+}
+@media screen and (min-width:1024px) {
+    .container{
+        width: 50%;
+        margin-top: 10%;
+    }
+    .dice:hover{
+        box-shadow: 0 0 30px 5px var(--neonGreen);
+    }
+}
